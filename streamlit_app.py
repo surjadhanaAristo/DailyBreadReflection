@@ -37,7 +37,7 @@ content = response["results"][0]["description"]
 llm = ChatOpenAI(temperature=0.9, openai_api_key="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")
 
 
-openai.api_key = "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"
+openai.api_key = "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"
 
 #st.image(image["data"][0]["url"])
 
