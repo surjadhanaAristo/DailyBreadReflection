@@ -34,10 +34,10 @@ PROMPT = response["results"][0]["title"]
 content = response["results"][0]["description"]
 
 #establish llm
-llm = ChatOpenAI(temperature=0.9, openai_api_key="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")
+llm = ChatOpenAI(temperature=0.9, openai_api_key="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")
 
 
-openai.api_key = "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"
+openai.api_key = "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"
 
 #st.image(image["data"][0]["url"])
 
