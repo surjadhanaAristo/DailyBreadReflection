@@ -34,7 +34,7 @@ PROMPT = response["results"][0]["title"]
 content = response["results"][0]["description"]
 
 #establish llm
-llm = ChatOpenAI(temperature=0.9, openai_api_key="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")
+llm = ChatOpenAI(temperature=0.9, openai_api_key="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")
 
 
 openai.api_key = "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"
