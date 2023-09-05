@@ -25,7 +25,7 @@ st.header("Daily Bread Reflection")
 today = datetime.today()
 apidate = today.strftime("%Y-%m-%d")
 url = "https://github.com/OranForever/DailyBreadReflection/blob/5110dd29f0a5f7b57c287fb60a1c27410026ae58/bas_short_2022-2023.csv?raw=true"
-df = pd.read_csv(url,index_col=0)
+df = pd.read_csv(r'/bas_short_2022-2023.csv')
 new_date = df[apidate][0]
 
 #extract data from news data api
@@ -34,10 +34,10 @@ PROMPT = response["results"][0]["title"]
 content = response["results"][0]["description"]
 
 #establish llm
-llm = ChatOpenAI(temperature=0.9, openai_api_key="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")
+llm = ChatOpenAI(temperature=0.9, openai_api_key="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")
 
 
-openai.api_key = "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"
+openai.api_key = "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"
 
 #st.image(image["data"][0]["url"])
 
