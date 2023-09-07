@@ -34,10 +34,14 @@ PROMPT = response["results"][0]["title"]
 content = response["results"][0]["description"]
 
 #establish llm
-llm = ChatOpenAI(temperature=0.9, openai_api_key="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")
+llm = ChatOpenAI(temperature=0.9, openai_api_key="https://orantheorange-dailybtest.hf.space/proxy/openai")
 
 
-openai.api_key = "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"
+#openai.api_key = "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"
+#open pawan key pk-HtOHlXDTBovVbWewtUzxarLmliGiDBIhHcpouKxEXVujXaUE
+#pawan key
+openai.api_key = "https://orantheorange-dailybtest.hf.space/proxy/openai"
+#openai.api_base = "https://api.pawan.krd/v1"
 
 #st.image(image["data"][0]["url"])
 
