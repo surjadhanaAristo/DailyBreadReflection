@@ -29,7 +29,8 @@ df = pd.read_csv(url, index_col=0)
 new_date = df[apidate][0]
 
 #extract data from news data api
-chatgpt_api_key = os.getenv("OPENAI_API_KEY")
+chatgpt_api_key = st.secrets["OPENAI_API_KEY"]
+os.environ["OPENAI_API_KEY"] = openai_api_key
 response = api.news_api(country="ca", category="top", language="en")
 PROMPT = response["results"][0]["title"]
 content = response["results"][0]["description"]
@@ -90,7 +91,6 @@ audio = generate(
     voice="Clyde",
     model='eleven_multilingual_v1'
 )
-st.write(f"Using CHATGPT api key: {chatgpt_api_key}")
 st.text("gospel reading: " + new_date)
 st.text("news content: " + content)
 st.markdown("Generated story: " + stories["new_story"])
