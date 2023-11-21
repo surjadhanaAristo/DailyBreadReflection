@@ -29,16 +29,13 @@ df = pd.read_csv(url, index_col=0)
 new_date = df[apidate][0]
 
 #extract data from news data api
-chatgpt_api_key = st.secrets["CHATGPT_API_KEY"]
+chatgpt_api_key = os.getenv("OPENAI_API_KEY")
 response = api.news_api(country="ca", category="top", language="en")
 PROMPT = response["results"][0]["title"]
 content = response["results"][0]["description"]
 
 #establish llm
 llm = ChatOpenAI(temperature=0.9, openai_api_key=chatgpt_api_key)
-
-
-#openai.api_key = "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"
 #open pawan key pk-HtOHlXDTBovVbWewtUzxarLmliGiDBIhHcpouKxEXVujXaUE
 #pawan key
 openai.api_key = chatgpt_api_key
