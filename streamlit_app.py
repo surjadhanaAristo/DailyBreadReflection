@@ -29,18 +29,19 @@ df = pd.read_csv(url, index_col=0)
 new_date = df[apidate][0]
 
 #extract data from news data api
+chatgpt_api_key = st.secrets["CHATGPT_API_KEY"]
 response = api.news_api(country="ca", category="top", language="en")
 PROMPT = response["results"][0]["title"]
 content = response["results"][0]["description"]
 
 #establish llm
-llm = ChatOpenAI(temperature=0.9, openai_api_key="https://orantheorange-dailybtest.hf.space/proxy/openai")
+llm = ChatOpenAI(temperature=0.9, openai_api_key=chatgpt_api_key)
 
 
 #openai.api_key = "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"
 #open pawan key pk-HtOHlXDTBovVbWewtUzxarLmliGiDBIhHcpouKxEXVujXaUE
 #pawan key
-openai.api_key = "https://orantheorange-dailybtest.hf.space/proxy/openai"
+openai.api_key = chatgpt_api_key
 #openai.api_base = "https://api.pawan.krd/v1"
 
 #st.image(image["data"][0]["url"])
@@ -92,6 +93,7 @@ audio = generate(
     voice="Clyde",
     model='eleven_multilingual_v1'
 )
+st.write(f"Using CHATGPT api key: {chatgpt_api_key}")
 st.text("gospel reading: " + new_date)
 st.text("news content: " + content)
 st.markdown("Generated story: " + stories["new_story"])
