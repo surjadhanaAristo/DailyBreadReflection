@@ -30,7 +30,7 @@ new_date = df[apidate][0]
 
 #extract data from news data api
 chatgpt_api_key = st.secrets["OPENAI_API_KEY"]
-os.environ["OPENAI_API_KEY"] = openai_api_key
+os.environ["OPENAI_API_KEY"] = chatgpt_api_key
 response = api.news_api(country="ca", category="top", language="en")
 PROMPT = response["results"][0]["title"]
 content = response["results"][0]["description"]
