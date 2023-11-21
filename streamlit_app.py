@@ -12,8 +12,9 @@ from newsdataapi import NewsDataApiClient
 from elevenlabs import clone, generate, play, set_api_key
 from elevenlabs.api import History
 _ = load_dotenv(find_dotenv()) # read local .env file
-# elevenlabs api key = 64d7cfe7ed3cae3cc80bef44b593a558
-set_api_key("64d7cfe7ed3cae3cc80bef44b593a558")
+elabs_api_key = st.secrets["ELABS_API_KEY"]
+os.environ["ELABS_API_KEY"] = elabs_api_key
+set_api_key(elabs_api_key)
 
 api = NewsDataApiClient(apikey="pub_27051eca379954fd03e84e06490e34bf9c5fc")
 # key = pub_27051eca379954fd03e84e06490e34bf9c5fc
