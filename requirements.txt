@@ -1,4 +1,4 @@
-streamlit==1.32.2
+streamlit==1.37.1
 numpy==2.0.1
 oauthlib==3.2.2
 aiohttp==3.8.4
