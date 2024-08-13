@@ -4,5 +4,5 @@ newsdataapi==0.1.6
 openai==0.27.8
 pandas==1.5.3
 python-dotenv==1.0.1
-streamlit==1.25.0
+streamlit==1.37.1
 pillow==10.4.0
