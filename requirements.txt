@@ -127,6 +127,7 @@ rich==13.7.1
 rpds-py==0.18.0
 rsa==4.9
 selenium==4.9.1
+setuptools==72.1.0
 sgmllib3k==1.0.0
 shapely==2.0.4
 six==1.16.0
