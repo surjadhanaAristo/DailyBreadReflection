@@ -154,7 +154,7 @@ virtualenv==20.23.0
 virtualenv-clone==0.5.7
 w3lib==2.1.2
 wcwidth==0.2.13
-websockets==10.4
+websockets==12.0
 wsproto==1.2.0
 yahoo-fin==0.8.9.1
 yarl==1.9.2
