@@ -32,7 +32,7 @@ debugpy==1.8.1
 decorator==5.1.1
 distlib==0.3.6
 docstring_parser==0.16
-elevenlabs==1.2.0
+elevenlabs==1.0.0
 exceptiongroup==1.1.1
 execnet==1.9.0
 executing==2.0.1
