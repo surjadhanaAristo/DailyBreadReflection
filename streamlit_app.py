@@ -9,7 +9,7 @@ from langchain.chains import SequentialChain
 from dotenv import load_dotenv, find_dotenv
 from datetime import datetime
 from newsdataapi import NewsDataApiClient
-from elevenlabs import generate, play, set_api_key
+from elevenlabs import generate, set_api_key
 from elevenlabs.api import History
 _ = load_dotenv(find_dotenv()) # read local .env file
 elabs_api_key = st.secrets["ELABS_API_KEY"]
