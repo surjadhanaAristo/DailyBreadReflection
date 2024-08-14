@@ -9,12 +9,13 @@ from langchain.chains import SequentialChain
 from dotenv import load_dotenv, find_dotenv
 from datetime import datetime
 from newsdataapi import NewsDataApiClient
-from elevenlabs import generate, set_api_key
+from elevenlabs import play
+from elevenlabs.client import ElevenLabs
 from elevenlabs.api import History
 _ = load_dotenv(find_dotenv()) # read local .env file
 elabs_api_key = st.secrets["ELABS_API_KEY"]
 os.environ["ELABS_API_KEY"] = elabs_api_key
-set_api_key(elabs_api_key) 
+client = ElevenLabs(api_key = elabs_api_key)
 
 api = NewsDataApiClient(apikey="pub_27051eca379954fd03e84e06490e34bf9c5fc")
 # key = pub_27051eca379954fd03e84e06490e34bf9c5fc
@@ -87,7 +88,7 @@ image = openai.Image.create(
     n=1,
     size="256x256",
 )
-audio = generate(
+audio = client.generate(
     text=stories["reflection"],
     voice="Clyde",
     model='eleven_multilingual_v1'
