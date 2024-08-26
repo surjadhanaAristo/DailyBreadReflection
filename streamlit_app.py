@@ -25,7 +25,7 @@ st.header("Daily Bread Reflection")
 #Retrieve bible passage
 today = datetime.today()
 apidate = today.strftime("%Y-%m-%d")
-url = "https://github.com/surjadhanaAristo/DailyBreadReflection/blob/main/newcsv.numbers?raw=true"
+url = "https://github.com/surjadhanaAristo/DailyBreadReflection/blob/main/new.csv?raw=true"
 df = pd.read_csv(url, index_col=0)
 new_date = df[apidate][0]
 
