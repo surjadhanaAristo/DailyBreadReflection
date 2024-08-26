@@ -5,4 +5,5 @@ today = datetime.today()
 url = "https://github.com/surjadhanaAristo/DailyBreadReflection/blob/main/newcsv.csv"
 df = pd.read_csv(url, index_col=0)
 apidate = today.strftime("%Y-%m-%d")
-new_date = df[0]
+new_date = df[apidate][0]
+print(new_date)
