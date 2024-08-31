@@ -54,6 +54,7 @@ def get_completion(prompt, model="gpt-3.5-turbo", temperature=0):
 
 today_date = datetime.today().strftime('%m-%d')
 #chains
+time.sleep(60)
 first_prompt = ChatPromptTemplate.from_template(
    "Create a new short story less than 2000 characters, based on the daily gospel reading {new_date} with the news description: {content}"
 )
