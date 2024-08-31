@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import os
 import openai
-from langchain.chat_models import ChatOpenAI
+from langchain_community.chat_models import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
 from langchain.chains import LLMChain
 from langchain.chains import SequentialChain
@@ -36,10 +36,9 @@ content = response["results"][0]["description"]
 
 #establish llm
 llm = ChatOpenAI(temperature=0.9, openai_api_key=chatgpt_api_key)
-#open pawan key pk-HtOHlXDTBovVbWewtUzxarLmliGiDBIhHcpouKxEXVujXaUE
-#pawan key
+
 openai.api_key = chatgpt_api_key
-#openai.api_base = "https://api.pawan.krd/v1"
+
 
 #st.image(image["data"][0]["url"])
 
@@ -95,4 +94,6 @@ st.text("news content: " + content)
 st.markdown("Generated story: " + stories["new_story"])
 st.image(image["data"][0]["url"])
 st.markdown(stories["reflection"])
-st.audio(audio)
+audio_bytes = b''.join(audio)
+
+st.audio(audio_bytes, format="audio/mp3")
