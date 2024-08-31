@@ -15,11 +15,9 @@ _ = load_dotenv(find_dotenv()) # read local .env file
 elabs_api_key = st.secrets["ELABS_API_KEY"]
 os.environ["ELABS_API_KEY"] = elabs_api_key
 client = ElevenLabs(api_key = elabs_api_key)
+newsdata_api_key = st.secrets["NEWS_API_KEY"]
 
-api = NewsDataApiClient(apikey="pub_27051eca379954fd03e84e06490e34bf9c5fc")
-# key = pub_27051eca379954fd03e84e06490e34bf9c5fc
-# bible api key = 3e407cc38336eb8ff24e6305a2fa8b3b
-# bible book = 685d1470fe4d5c3b-01
+api = NewsDataApiClient(apikey=newsdata_api_key)
 st.header("Daily Bread Reflection")
 
 #Retrieve bible passage
