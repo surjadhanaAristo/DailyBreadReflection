@@ -8,7 +8,7 @@ from langchain.chains import LLMChain
 from langchain.chains import SequentialChain
 from dotenv import load_dotenv, find_dotenv
 from datetime import datetime
-from newsdataapi import NewsDataApiClient, NewsdataException
+from newsdataapi import NewsDataApiClient
 from elevenlabs import play
 from elevenlabs.client import ElevenLabs
 import time
@@ -37,7 +37,7 @@ def get_news_with_retry(api, retries=5):
         try:
             response = api.news_api(country="ca", category="top", language="en")
             return response
-        except NewsdataException as e:
+        except Exception as e:
             if i < retries - 1 and 'RateLimitExceeded' in str(e):
                 time.sleep(60 * (i + 1))  # Exponential backoff
             else:
