@@ -133,10 +133,10 @@ if st.button("generate daily story"):
 
     ad = st.audio(audio_bytes, format="audio/mp3")
 else:
-    gospel.empty()
-    content.empty()
-    story.empty()
-    image.empty()
-    reflection.empty()
-    ad.empty()
+    gospel.empty("")
+    content.empty("")
+    story.empty("")
+    image.empty("")
+    reflection.empty("")
+    ad.empty("")
 st.button("Reset", type="primary")
