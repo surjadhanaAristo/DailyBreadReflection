@@ -30,7 +30,7 @@ new_date = df[apidate][0]
 gospel = st.text("")
 content = st.text("")
 story = st.markdown("")
-image = st.image("")
+image = st.image()
 reflection = st.markdown("")
 ad = st.audio("")
 
@@ -136,7 +136,7 @@ else:
     gospel.empty("")
     content.empty("")
     story.empty("")
-    image.empty("")
+    image.empty()
     reflection.empty("")
     ad.empty("")
 st.button("Reset", type="primary")
