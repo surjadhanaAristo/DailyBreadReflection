@@ -119,19 +119,20 @@ if st.button("generate daily story"):
         n=1,
         size="256x256",
     )
-    audio = client.generate(
-        text=stories["reflection"],
-        voice="Clyde",
-        model='eleven_multilingual_v1'
-    )
+    # audio = client.generate(
+    #     text=stories["reflection"],
+    #     voice="Clyde",
+    #     model='eleven_multilingual_v1'
+    # )
     gospel = st.text("gospel reading: " + new_date)
     content = st.text("news content: " + content)
     story = st.markdown("Generated story: " + stories["new_story"])
     image = st.image(image["data"][0]["url"])
     reflection = st.markdown(stories["reflection"])
-    audio_bytes = b''.join(audio)
 
-    ad = st.audio(audio_bytes, format="audio/mp3")
+    #disable audio conversion for now
+    #audio_bytes = b''.join(audio)
+    #ad = st.audio(audio_bytes, format="audio/mp3")
 else:
     gospel.empty()
     content.empty()
