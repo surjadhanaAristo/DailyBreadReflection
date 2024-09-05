@@ -30,9 +30,9 @@ new_date = df[apidate][0]
 gospel = st.text("")
 content = st.text("")
 story = st.markdown("")
-image = st.image()
-reflection = st.markdown("")
-ad = st.audio("")
+image = st.text("")
+reflection = st.text("")
+ad = st.text("")
 
 #establish key from secrets and environment variables
 chatgpt_api_key = st.secrets["OPENAI_API_KEY"]
