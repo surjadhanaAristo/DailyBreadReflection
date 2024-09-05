@@ -83,7 +83,7 @@ if st.button("generate daily story"):
     #chains
 
     first_prompt = ChatPromptTemplate.from_template(
-    "Create a new short story less than 2000 characters, based on the daily gospel reading {new_date} with the news description: {content} and include a lesson to be learned at the end"
+    "Create a new short story less than 2000 characters, based on the daily gospel reading {new_date} with the news description: {content} and include a lesson to be learned at the end. Can You include another short paragraph explaining why the story relates to the bible passage?"
     )
     chain_one = LLMChain(llm=llm, prompt=first_prompt,
                         output_key="new_story"
