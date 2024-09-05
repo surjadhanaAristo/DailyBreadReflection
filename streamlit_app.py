@@ -39,6 +39,14 @@ chatgpt_api_key = st.secrets["OPENAI_API_KEY"]
 os.environ["OPENAI_API_KEY"] = chatgpt_api_key
 
 if st.button("generate daily story"):
+    gospel.empty()
+    content.empty()
+    story.empty()
+    image.empty()
+    reflection.empty()
+    ad.empty()
+    
+else:
     #get news 
     def get_news_with_retry(api, retries=5):
         for i in range(retries):
@@ -132,11 +140,4 @@ if st.button("generate daily story"):
     audio_bytes = b''.join(audio)
 
     ad = st.audio(audio_bytes, format="audio/mp3")
-else:
-    gospel.empty()
-    content.empty()
-    story.empty()
-    image.empty()
-    reflection.empty()
-    ad.empty()
 st.button("Reset", type="primary")
