@@ -27,12 +27,12 @@ apidate = today.strftime("%Y-%m-%d")
 url = "https://github.com/surjadhanaAristo/DailyBreadReflection/blob/main/new.csv?raw=true"
 df = pd.read_csv(url, index_col=0)
 new_date = df[apidate][0]
-gospel = st.text()
-content = st.text()
-story = st.markdown()
-image = st.image()
-reflection = st.markdown()
-ad = st.audio
+gospel = st.text("")
+content = st.text("")
+story = st.markdown("")
+image = st.image("")
+reflection = st.markdown("")
+ad = st.audio("")
 
 #establish key from secrets and environment variables
 chatgpt_api_key = st.secrets["OPENAI_API_KEY"]
